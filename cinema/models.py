@@ -40,7 +40,8 @@ class Actor(models.Model):
 
 
 def get_image_path(instance, filename):
-    filename = f"{slugify(instance.title)}-{uuid.uuid4()}{pathlib.Path(filename).suffix}"
+    filename = (f"{slugify(instance.title)}-"
+                f"{uuid.uuid4()}{pathlib.Path(filename).suffix}")
     return pathlib.Path(f"upload-image/{pathlib.Path(filename)}")
 
 

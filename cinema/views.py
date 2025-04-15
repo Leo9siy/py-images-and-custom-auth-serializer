@@ -62,7 +62,6 @@ class MovieViewSet(
     queryset = Movie.objects.prefetch_related("genres", "actors")
     serializer_class = MovieSerializer
 
-
     @action(methods=["POST"], detail=True, url_path="upload-image")
     def upload_image(self, request, pk=None):
 
@@ -104,7 +103,6 @@ class MovieViewSet(
             return MovieListSerializer
         if self.action == "retrieve":
             return MovieDetailSerializer
-
 
         return MovieSerializer
 
