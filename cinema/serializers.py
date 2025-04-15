@@ -79,7 +79,7 @@ class MovieSessionListSerializer(MovieSessionSerializer):
     )
     tickets_available = serializers.IntegerField(read_only=True)
 
-    movie_image = serializers.CharField(
+    movie_image = serializers.ImageField(
         source="movie.image", read_only=True
     )
 
